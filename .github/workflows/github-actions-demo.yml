@@ -1,25 +1,18 @@
-name: Python application141251
+name: Python applic4t1on
 
-on:
+
+on: 
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-permissions:
-  contents: read
-
+    branches: [master]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Run python application
-      run: |
-        python src/benchmark.py
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: install
+        run: |
+          pip install -U pytest
+      - run: python3 -m pytest test.py
