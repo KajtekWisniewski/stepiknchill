@@ -15,4 +15,3 @@ jobs:
         run: |
           pip install -U pytest
       - run: python3 -m pytest test.py
-      - run: python3 -m pytest funkcja.py
